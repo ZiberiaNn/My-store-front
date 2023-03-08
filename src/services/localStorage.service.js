@@ -6,4 +6,13 @@ const saveItemInLocal = (itemName, itemValue) => {
     }
 }
 
-export {saveItemInLocal};
+
+const getItemFromLocal = (itemName) => {
+    try {
+        return localStorage.getItem(itemName);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export {saveItemInLocal, getItemFromLocal};

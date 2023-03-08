@@ -1,6 +1,8 @@
-import { Login } from './components/Login';
-import { Order } from './components/Orders';
-import App from './components/App';
+import { LoginPage } from './pages/LoginPage';
+import { Order } from './containers/Orders';
+import { ProtectedRoute } from './containers/ProtectedRoute';
+import { AuthProvider } from './utils/useAuth';
+import HomePage from './pages/HomePage';
 import {
   BrowserRouter,
   Route,
@@ -8,13 +10,16 @@ import {
 } from "react-router-dom";
 function Router() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/my-orders' element={<Order />}></Route>
-        <Route path='/app' element={<App />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/login' element={<LoginPage />}></Route>
+          <Route path='/' element={<ProtectedRoute><HomePage /></ProtectedRoute>}>
+            <Route path='my-orders' element={<Order />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
