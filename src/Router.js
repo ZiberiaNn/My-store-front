@@ -1,4 +1,3 @@
-import './App.css';
 import { Login } from './components/Login';
 import { Order } from './components/Orders';
 import App from './components/App';

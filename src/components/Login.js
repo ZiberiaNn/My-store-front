@@ -3,9 +3,11 @@ import "./../styles/components/Login.css";
 import MyStoreLogo from "./../styles/images/MyStoreLogo.png";
 import { AuthService } from "../services/auth.service";
 import { saveItemInLocal } from "../services/localStorage.service";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const service = new AuthService();
+    const navigate = useNavigate();
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [loginError, setLoginError] = React.useState(false);
@@ -20,10 +22,11 @@ const Login = () => {
     };
     const handleSubmit = async (event) => {
         try {
-            event.preventDefault(event.target.form[1].value);
+            event.preventDefault();
             const {accessToken, refreshToken} = await service.login(email, password); // llamar a la función de autenticación
             saveItemInLocal("accessToken", accessToken);
             saveItemInLocal("refreshToken", refreshToken);
+            navigate('/my-orders');
         } catch (error) {
             console.error(error);
             setLoginError(true);
