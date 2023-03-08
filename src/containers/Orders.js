@@ -1,3 +1,3 @@
-const Order = () => (<h1>ORDERS</h1>);
+const Orders = () => (<h1>ORDERS</h1>);
 
-export { Order };
+export { Orders };

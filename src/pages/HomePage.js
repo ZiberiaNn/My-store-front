@@ -6,6 +6,7 @@ function HomePage() {
       <ul>
         <li><Link to='/login'>Login</Link></li>
         <li><Link to='my-orders'>Orders</Link></li>
+        <li><Link to='products'>Products</Link></li>
         <li></li>
       </ul>
       <Outlet></Outlet>

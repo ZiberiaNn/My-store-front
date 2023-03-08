@@ -1,5 +1,6 @@
 import { LoginPage } from './pages/LoginPage';
-import { Order } from './containers/Orders';
+import { Orders } from './containers/Orders';
+import { Products } from './containers/Products';
 import { ProtectedRoute } from './containers/ProtectedRoute';
 import { AuthProvider } from './utils/useAuth';
 import HomePage from './pages/HomePage';
@@ -15,7 +16,8 @@ function Router() {
         <Routes>
           <Route path='/login' element={<LoginPage />}></Route>
           <Route path='/' element={<ProtectedRoute><HomePage /></ProtectedRoute>}>
-            <Route path='my-orders' element={<Order />} />
+            <Route path='my-orders' element={<Orders />} />
+            <Route path='products' element={<Products />} />
           </Route>
         </Routes>
       </BrowserRouter>
