@@ -146,6 +146,12 @@
     color: #666666;
   }
   
+  .txt-error{
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #d41313;
+  }
   
   /*//////////////////////////////////////////////////////////////////
   [ login ]*/

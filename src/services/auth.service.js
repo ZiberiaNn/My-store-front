@@ -7,7 +7,7 @@ class AuthService {
       password: password,
     });
     const {accessToken, refreshToken} = response.data;
-    console.log({accessToken, refreshToken});
+    return ({accessToken, refreshToken});
   }
 }
 
