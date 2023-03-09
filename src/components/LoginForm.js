@@ -1,5 +1,5 @@
 import React from "react";
-import "./../styles/containers/LoginForm.css";
+import "./../styles/components/LoginForm.css";
 import MyStoreLogo from "./../styles/images/MyStoreLogo.png";
 
 const LoginForm = ({handleInputChange, handleSubmit, loginError}) => {
